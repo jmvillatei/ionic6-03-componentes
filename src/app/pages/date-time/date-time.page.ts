@@ -9,16 +9,34 @@ export class DateTimePage implements OnInit {
 
   fechaNaci: Date = new Date();
 
+  customPickerOptions = {
+    buttons: [
+      {
+        text: 'Hola',
+        handler: (event) => {
+          console.log(event);
+        }
+      },
+      {
+        text: 'Mundo',
+        handler: () => {
+          console.log("mundo");
+          
+        }
+      }
+    ]
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  cambioFecha( event ){
+  cambioFecha(event) {
     console.log(event);
     console.log(new Date(event.detail.value));
-    
-    
+
+
   }
 
 }
